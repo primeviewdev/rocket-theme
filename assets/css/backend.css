@@ -1,0 +1,114 @@
+/**
+*
+* Backend CSS Settings
+*
+* @By Zekinah Joy Lecaros
+*
+**/
+
+button, input, select, textarea {
+    font-weight: initial !important;
+}
+
+.w-25 {
+    width: 25%;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.f-right {
+    float: right;
+}
+
+.f-left {
+    float: left;
+}
+
+table.zjl-table tr td input[type=text],table.zjl-table tr td textarea {
+    width: 80%;
+}
+table.zjl-table tr td {
+    border-bottom: 1px solid #eee;
+    margin: 13px 0px;
+    padding: 12px 0px;
+    font-size: 14px;
+	font-weight: bold;
+}
+table.zjl-table tr:last-of-type  td{
+    border-bottom: 0px solid #eee;
+}
+table.zjl-table {
+    border-top: 4px solid #0085BA;
+    background: #f9f9f9;
+    padding: 16px;
+    width: 70%;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+	margin-bottom: 40px;
+}
+table.zjl-table tr td a {
+    float: right;
+}
+.zjl-home {
+    background: #fff;
+    padding: 5px;
+    border-top: 4px solid #0085BA;
+    margin: 10px 0px;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+	padding: 0 40px 23px 40px;
+}
+
+/* Style for Image output banner */
+.container-output {
+    position: relative;
+    height: 245px;
+    overflow: hidden;
+}
+
+body {font-family: Arial;}
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border-bottom: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  border-radius: 10px 10px 0 0;
+  border: 1px solid #ccc;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+  border-left: 4px solid #0085BA;
+      border-radius: 10px 10px 0 0;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.copyright {
+	float: right;
+}
