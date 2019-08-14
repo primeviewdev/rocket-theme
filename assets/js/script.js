@@ -23,7 +23,7 @@ function mobileMenu(){
 	}
 }
 function menuClick(){
-	$j('li.dropdown').click(function(e){
+	$('li.dropdown').click(function(e){
 		console.log(e);
 		$(this).removeClass('open');
 	});

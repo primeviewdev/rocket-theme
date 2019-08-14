@@ -7,8 +7,16 @@
 					</div>
 				</div>
 				<div class="site_copyright">
-					<?php echo do_shortcode('[copyright]'); ?>
-					<?php echo do_shortcode('[developer]'); ?>
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6">
+								<?php echo do_shortcode('[copyright]'); ?>
+							</div>
+							<div class="col-md-6">
+								<?php echo do_shortcode('[developer]'); ?>
+							</div>
+						</div>
+					</div>
 				</div>
 			</footer>
 		</div>

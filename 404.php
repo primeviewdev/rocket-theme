@@ -3,7 +3,7 @@
  * The template for displaying all 404 Pages
  **/
 get_header(); ?>
-	<div id="primary" class="404 innerpage site-content">
+	<!-- <div id="primary" class="404 innerpage site-content">
 		<header class="innerpage-header">
 			<h1 class="text-center innerpage-title">404 : Page not found</h1>
 		</header>
@@ -26,15 +26,37 @@ get_header(); ?>
 							<ul class="disc">
 								<li><a href="#" onclick="history.go(-1); return false;">Go back</a> to the previous page.</li>
 								<li>Use the search bar at the top of the page to search.</li>
-								<li>Follow these links to get you back on track! <a href="<?php echo get_site_url(); ?>">Home</a> 
+								<li>Follow these links to get you back on track! <a href="<?php //echo get_site_url(); ?>">Home</a> 
 							</ul>
 						</dd>
 					</dl>
-				</div><!-- .col-md-8 -->
+				</div>
 				<div class="col-md-4">
-					<?php get_sidebar(); ?>
-				</div><!-- .col-md-4 -->
-			</div><!--.row -->
-		</div><!-- .container-fluid -->
-	</div><!-- .primary -->
+					<?php //get_sidebar(); ?>
+				</div>
+			</div>
+		</div>
+	</div> -->
+	<div class="text-center">
+		<img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/assets/images/404.gif" alt="404">
+	</div>
+	<div class="container main_content text-center">
+			<div class="row" role="main">
+				<div class="col-md-12">
+					<dl>
+						<dt>The page you requested was not found, and we have a fine guess why.</dt>
+					</dl>
+					<dl>
+						<dt>What can you do?</dt>
+						<dd>Have no fear, help is near! There are many ways you can get back on track with this site.</dd>
+						<dd>
+								<p>Go back to the <a href="#" onclick="history.go(-1); return false;">previous page</a>.</p>
+								<p>Go back <a href="<?php echo get_site_url(); ?>">Homepage</a> </p>
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+
 <?php get_footer(); ?>
+
