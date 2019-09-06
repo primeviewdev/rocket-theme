@@ -13,6 +13,8 @@
 ## Contributors
 * Zekinah Joy Lecaros
 * Reander Agulto
+* Janfred Magnaye
+* Jester Aguilar
 * Jearson Carillo
 
 ## License
