@@ -121,6 +121,10 @@
 							<td>JS Parallax Scrolling : </td>
 							<td><input type="checkbox" name="parallax" value="true" <?php if(get_option('parallax') == "true") echo "checked"; ?> /> Example :  $("SELECTOR").parallax("50%", 0.1); </td>
 						</tr>
+						<tr>
+							<td>Dark Mode Widget: </td>
+							<td><input type="checkbox" name="dark_mode" value="true" <?php if(get_option('dark_mode') == "true") echo "checked"; ?> /> <a target="_blank" href="https://darkmodejs.learn.uno/">Read Documentation</a> </td>
+						</tr>
 					</table>
 				</div>
 			
@@ -276,6 +280,7 @@
 		register_setting( 'option-group', 'scroll_reveal' );
 		register_setting( 'option-group', 'owl' );
 		register_setting( 'option-group', 'parallax' );
+		register_setting( 'option-group', 'dark_mode' );
 		register_setting( 'option-group', 'loader' );
 		register_setting( 'option-group', 'copyright' );
 		register_setting( 'option-group', 'developer' );

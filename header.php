@@ -26,7 +26,7 @@
 		<img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/assets/images/loading.gif" alt="Loading..." title="Loading...">
 	</div>
 
-	<div id="page" class="hfeed site">
+	<div id="page" class="hfeed ">
 		<div class="site-header">
 			<?php
 				get_template_part('includes/template-parts/headers/content','header-'. $headerTemplate);
