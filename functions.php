@@ -4,7 +4,6 @@
 	require_once('includes/theme-settings/asset-import.php');
 	require_once('includes/theme-settings/page-settings.php');
 	require_once('includes/theme-settings/theme-settings.php');
-	require_once('modules/custom.php');
 
 
 	function developerShortcode( $atts ) { 
