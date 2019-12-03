@@ -261,6 +261,12 @@
 
 	}
 
+	function enqueue_color_picker( $hook ) {
+		// first check that $hook_suffix is appropriate for your admin page
+		wp_enqueue_style( 'wp-color-picker' );
+		wp_enqueue_script( 'backend-script-handle', plugins_url('backend.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
+	}
+
 	/**
 	 * Function Init 
 	 */
@@ -319,6 +325,7 @@
 			 * Theme Features
 			 */
 			 add_theme_support( 'post-thumbnails' ); 
+			 add_action( 'admin_enqueue_scripts', 'enqueue_color_picker' );
 			 
 			  
 
