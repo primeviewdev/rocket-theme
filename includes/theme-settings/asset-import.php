@@ -75,17 +75,12 @@ function rocketScript(){
 	
 	//Pace
 	// wp_enqueue_script( 'pace-js', '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js',array('jquery'));
-
-	//Load VueJS Library
-	wp_enqueue_script( 'vue-js', '//unpkg.com/vue@2.6.10/dist/vue.js',null);
-	wp_enqueue_script( 'axios-js', '//cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js',null);
 	
 	//Load core file
 	wp_enqueue_script( 'rocket-tether-js', '//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', array('jquery'));	
 	wp_enqueue_script( 'rocket-bootstrap-js', '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', array('jquery'));	
 	wp_enqueue_script( 'rocket-script', get_template_directory_uri() . '/assets/js/script.js',array('jquery'));
 	wp_enqueue_script( 'moby-js', get_template_directory_uri() . '/assets/js/moby/moby.min.js',array('jquery'));
-	wp_enqueue_script( 'vue-script', get_template_directory_uri() . '/assets/js/vue-script.js',[]);	
 
 	//Wordpress AJAX
 	wp_localize_script( 'wp_ajax', 'wp_ajax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' )));
@@ -112,8 +107,7 @@ function wsds_detect_enqueued_scripts() {
 function wsds_defer_scripts( $tag, $handle, $src ) {
 	// The handles of the enqueued scripts we want to defer
 	$defer_scripts = array( 
-		'main-script',
-		'vue-script',
+		'main-script'
 	);
     if ( in_array( $handle, $defer_scripts ) ) {
         return '<script type="text/javascript" src="' . $src . '" defer="defer"></script>' . "\n";
@@ -143,9 +137,6 @@ function wsds_async_scripts( $tag, $handle, $src ) {
 	$async_scripts = array( 
 		'contact-form-7',
 		'bootstrap-js',
-		'vue-js',
-		'axios-js',
-		'vue-script',
 		'main-tether-js',
 		'main-bootstrap-js',
 		'parallax',
