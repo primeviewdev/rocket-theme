@@ -6,6 +6,18 @@ $(function(){
 	mobyMobileMenu();
 	console.log('Loading Resources............100%');
 	$('body').hide();
+
+	$(window).scroll(function() {
+		if ($(this).scrollTop()) {
+			$('#scroll-to-top').fadeIn();
+		} else {
+			$('#scroll-to-top').fadeOut();
+		}
+	});
+
+	$("#scroll-to-top").click(function () {
+		$("html, body").animate({scrollTop: 0}, 1000);
+	});
 });
 function mobileMenu(){
 	var screen = $(window).width();

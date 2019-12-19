@@ -102,7 +102,7 @@
 				</div>
 			
 			
-				<!-- Page settings  -->
+				<!-- Frontend settings  -->
 				<div id="3" class="tabcontent">
 					<h3> Frontend Settings</h3>
 					<table class="zjl-table">
@@ -158,6 +158,10 @@
 							<td class="w-25"><input type="radio" name="header-template" value="center"<?= ((get_option('header-template') === 'center') ? "checked='checked'" : '') ?>>Center Logo</td>
 							<td class="w-25"><input type="radio" name="header-template" value="right"<?= ((get_option('header-template') === 'right') ? "checked='checked'" : '') ?>>Right Logo</td>
 						</tr>
+						<tr>
+							<td>Scroll to Top </td>
+							<td class="w-25"><input type="checkbox" name="scroll-to-top" value="true" <?php if(get_option('scroll-to-top') == "true") echo "checked"; ?> />
+						<tr>
 					</table>
 				</div>
 					
@@ -264,7 +268,7 @@
 	 */
 	function rocketThemeSettings() {
 
-		add_option( 'header-bgcolor', '#F8EAE7' );
+		add_option( 'header-bgcolor', '#1e73be' );
 		add_option( 'page-bgcolor', '#FFFFFF' );
 		add_option( 'footer-bgcolor', '#8E8A89' );
 		add_option( 'header-template', 'left' );
@@ -294,6 +298,7 @@
 		register_setting( 'option-group', 'page-bgcolor' );
 		register_setting( 'option-group', 'footer-bgcolor' );
 		register_setting( 'option-group', 'header-template' );
+		register_setting( 'option-group', 'scroll-to-top' );
 
 		register_setting( 'option-group', 'input_banner' );
 
@@ -306,16 +311,16 @@
 	?>
 		<style type='text/css'>
 			.site-header, nav.navbar {
-				background-color:<?php echo $header; ?>!important;
+				background-color:<?php echo $header; ?> !important;
 			}
 			footer, .site_main_footer, .site_copyright {
-				background-color:<?php echo $footer; ?>!important;
+				background-color:<?php echo $footer; ?> !important;
 			}
 			/* span.text-muted{
 				mix-blend-mode: difference;
 			} */
 			.site{
-				background-color:<?php echo $page; ?>!important;
+				background-color:<?php echo $page; ?> !important;
 			}
 		</style>
 	<?php

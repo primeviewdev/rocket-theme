@@ -71,10 +71,46 @@ function rocketScript(){
 	if(get_option('dark_mode') == "true") {
 		wp_enqueue_script( 'rocket-dark-mode', '//cdn.jsdelivr.net/npm/darkmode-js@1.5.0/lib/darkmode-js.min.js',array('jquery'));
 		wp_enqueue_script( 'rocket-dark-mode-custom', get_template_directory_uri() . '/assets/js/dark-mode-custom.js',array('jquery'));
+?>
+		<script>
+			var options = {
+				bottom: '64px', // default: '32px'
+				right: 'unset', // default: '32px'
+				left: '32px', // default: 'unset'
+				time: '0.5s', // default: '0.3s'
+				mixColor: '#fff', // default: '#fff'
+				backgroundColor: '#fff',  // default: '#fff'
+				buttonColorDark: '#100f2c',  // default: '#100f2c'
+				buttonColorLight: '#fff', // default: '#fff'
+				saveInCookies: false, // default: true,
+				label: '🌓', // default: ''
+				autoMatchOsTheme: true // default: true
+			}
+
+			const darkmode = new Darkmode(options);
+			darkmode.showWidget();
+		</script>
+<?php
 	}
-	
-	//Pace
-	// wp_enqueue_script( 'pace-js', '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js',array('jquery'));
+
+	if(get_option('scroll-to-top') == "true") {
+?>
+	<style type='text/css'>
+		#scroll-to-top {
+			display: block;
+		}
+	</style>
+<?php
+	} else {
+?>
+	<style type='text/css'>
+		#scroll-to-top {
+			display: none;
+		}
+	</style>
+<?php
+
+	}
 	
 	//Load core file
 	wp_enqueue_script( 'rocket-tether-js', '//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', array('jquery'));	
