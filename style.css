@@ -139,11 +139,27 @@ span.date-posted {
     font-size: 12px;
 }
 
+#scroll-to-top {
+    background: #1e73be;
+    color: #fff;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 28px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: none;
+}
+
+#scroll-to-top:hover {
+    cursor: pointer;
+}
+
 /**
  * Your customization Starts Here
  **/
 
-/* Default */
+/* This is Default */
 body {
 	color: #343434;
 	font-family: 'Open Sans', sans-serif;
