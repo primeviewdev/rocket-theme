@@ -217,6 +217,26 @@
 				'required'  => false,
 				'force_activation' => false,
 				'force_deactivation' => false
+			),
+			array(
+				'name'      => 'Zone Rating', //repo name
+				'slug'      => 'zone-rating', //url
+				'source'    => '/zekinah/Zone-Ratings/archive/master.zip',
+				'external_url' => 'https://github.com/zekinah/Zone-Ratings',
+				'version'	=> 'version 1.9',
+				'required'  => false,
+				'force_activation' => false,
+				'force_deactivation' => false
+			),
+			array(
+				'name'      => 'Zone GDPRv2', //repo name
+				'slug'      => 'zone-gdprv2', //url
+				'source'    => '/zekinah/Zone-GDPRv2/archive/master.zip',
+				'external_url' => 'https://github.com/zekinah/Zone-GDPRv2',
+				'version'	=> 'version 2.0',
+				'required'  => false,
+				'force_activation' => false,
+				'force_deactivation' => false
 			)
 		);
 
