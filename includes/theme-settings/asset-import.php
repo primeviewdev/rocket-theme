@@ -184,3 +184,12 @@ function wsds_async_scripts( $tag, $handle, $src ) {
     return $tag;
 }
 
+function zn_upload_mimes($mimes) {
+
+	$mimes['csv'] = "text/csv";
+
+	return $mimes;
+}
+	
+add_filter('upload_mimes', 'zn_upload_mimes');
+
