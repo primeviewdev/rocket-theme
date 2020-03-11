@@ -229,11 +229,11 @@
 				'force_deactivation' => false
 			),
 			array(
-				'name'      => 'Zone GDPRv2', //repo name
-				'slug'      => 'zone-gdprv2', //url
-				'source'    => '/zekinah/Zone-GDPRv2/archive/master.zip',
-				'external_url' => 'https://github.com/zekinah/Zone-GDPRv2',
-				'version'	=> 'version 2.0',
+				'name'      => 'Zone Cookie', //repo name
+				'slug'      => 'zone-cookie', //url
+				'source'    => '/zekinah/Zone-Cookie/archive/master.zip',
+				'external_url' => 'https://github.com/zekinah/Zone-Cookie',
+				'version'	=> 'version 1.2',
 				'required'  => false,
 				'force_activation' => false,
 				'force_deactivation' => false
