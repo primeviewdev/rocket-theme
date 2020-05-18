@@ -7,16 +7,6 @@ Description: Theme built for speed.
 Version: v1.31
 */
 
-/**
- * Bootstrap to Wordpress Tweaks
- */
-
-/* .pace-done > :not(.pace) {
-  opacity: 1!important;
-  visibility:visible!important;
-  transition: opacity .8s ease;
-} */
-
 body.pace-done .hfeed {
     opacity: unset !important;
 }
@@ -48,8 +38,6 @@ body.pace-done .hfeed {
 nav.navbar.navbar-expand-lg.navbar-light.bg-light {
     background: #fff;
 	padding: 0;
-
-    /* box-shadow: 0 1px 3px rgba(0,0,0,.1); */
 }
 div#sidebar ul li{
 	list-style-type:none;
@@ -139,11 +127,27 @@ span.date-posted {
     font-size: 12px;
 }
 
+#scroll-to-top {
+    background: #1e73be;
+    color: #fff;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 28px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: none;
+}
+
+#scroll-to-top:hover {
+    cursor: pointer;
+}
+
 /**
  * Your customization Starts Here
  **/
 
-/* Default */
+/* This is Default */
 body {
 	color: #343434;
 	font-family: 'Open Sans', sans-serif;
@@ -162,10 +166,6 @@ h6, .h6 {
 
 p:last-child {
 	margin-bottom: 0;
-}
-
-.innerpage .main_container {
-    /* margin-bottom: 30px; */
 }
 
 aside .widget-title {

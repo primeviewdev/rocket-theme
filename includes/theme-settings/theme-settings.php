@@ -20,11 +20,11 @@
 		echo '<div class="wrap">';
 			echo '<h1>Primeview Rocket Theme Options</h1>';
 
-			$tab_option = array ('Home','Social Media','Website Settings','Enable Theme Features','Frontend Settings', 'Page Settings', 'Copyright Section', 'Third Party Scripts');
+			$tab_option = array ('Home','Social Media','Website Settings','Frontend Settings', 'Page Settings', 'Copyright Section', 'Add ons','Third Party Scripts');
 			$x = 0;
 			echo '<div class="tab">';
 			foreach ($tab_option as $option_setting) {
-				echo '<button class="tablinks" onclick="openCity(event, '.$x.')">'.$option_setting.'</button>';
+				echo '<button id="tab-'.$x.'" class="tablinks" onclick="openCity(event, '.$x.')">'.$option_setting.'</button>';
 				$x++;
 			}
 			echo '</div>';
@@ -32,7 +32,7 @@
 			<!-- Home -->
 			<div id="0" class="tabcontent active">
 					<div class="zjl-home">
-						<img src='<?= get_template_directory_uri() ?>/assets/images/banner.png'>
+						<img class="zjl-image-center" src='<?= get_template_directory_uri() ?>/assets/images/banner.png'>
 						<h2>Social Media Shortcode</h2>
 						<p><b>Shortcode :</b> [social-media]</p>
 						<p><b>Parameters : </b> mode = facebook , twitter , google_plus , linkedin , youtube , instagram , pinterest </p>
@@ -50,7 +50,7 @@
 			?>
 				<!-- Social Media settings -->
 				<div id="1" class="tabcontent">
-					<h3>I. Social Media settings</h3>
+					<h3> Social Media settings</h3>
 					<p><b>Shortcode :</b> [social-media]</p>
 					<p><b>Parameters : </b> mode = facebook , twitter , google_plus , linkedin , youtube , instagram , pinterest </p>
 					<p><b>Example : </b> [social-media mode="facebook"]</p>
@@ -88,7 +88,7 @@
 			
 				<!-- Website settings -->
 				<div id="2" class="tabcontent">
-					<h3>II. Website Settings</h3>
+					<h3> Website Settings</h3>
 					<table class="zjl-table">
 						<tr>
 							<td>Frontend Favicon: </td>
@@ -101,54 +101,28 @@
 					</table>
 				</div>
 			
-				<!-- Theme Features settings -->
-				<div id="3" class="tabcontent">
-					<h3>III. Enable Theme Features</h3>
-					<table class="zjl-table">
-						<tr>
-							<td>FontAwesome v4.4.0 : </td>
-							<td><input type="checkbox" name="font_awesome" value="true" <?php if(get_option('font_awesome') == "true") echo "checked"; ?> /> <a target="_blank" href="https://fortawesome.github.io/Font-Awesome/icons/">Read Documentation</a></td>
-						</tr>
-						<tr>
-							<td>Scroll Reveal : </td>
-							<td><input type="checkbox" name="scroll_reveal" value="true" <?php if(get_option('scroll_reveal') == "true") echo "checked"; ?> /><a target="_blank" href="https://github.com/jlmakes/scrollreveal.js">Read Documentation</a> </td>
-						</tr>
-						<tr>
-							<td>Owl Carousel v2.3.3: </td>
-							<td><input type="checkbox" name="owl" value="true" <?php if(get_option('owl') == "true") echo "checked"; ?> /> <a target="_blank" href="https://owlcarousel2.github.io/OwlCarousel2/demos/basic.html">Read Documentation</a> </td>
-						</tr>
-						<tr>
-							<td>JS Parallax Scrolling : </td>
-							<td><input type="checkbox" name="parallax" value="true" <?php if(get_option('parallax') == "true") echo "checked"; ?> /> Example :  $("SELECTOR").parallax("50%", 0.1); </td>
-						</tr>
-						<tr>
-							<td>Dark Mode Widget: </td>
-							<td><input type="checkbox" name="dark_mode" value="true" <?php if(get_option('dark_mode') == "true") echo "checked"; ?> /> <a target="_blank" href="https://darkmodejs.learn.uno/">Read Documentation</a> </td>
-						</tr>
-					</table>
-				</div>
 			
-				<!-- Page settings  -->
-				<div id="4" class="tabcontent">
-					<h3>IV. Frontend Settings</h3>
+				<!-- Frontend settings  -->
+				<div id="3" class="tabcontent">
+					<h3> Frontend Settings</h3>
 					<table class="zjl-table">
 						<tr>
 							<td>Header Background Color </td>
-							<td><input type="color" name="header-bgcolor" value="<?= esc_attr( get_option('header-bgcolor') )?>" /></td>
+							<td><input type="text" name="header-bgcolor" class="color-field" value="<?= esc_attr( get_option('header-bgcolor') )?>" /></td>
 						</tr>
 						<tr>
 							<td>Page Background Color </td>
-							<td><input type="color" name="page-bgcolor" value="<?= esc_attr( get_option('page-bgcolor') )?>" /></td>
+							<td><input type="text" name="page-bgcolor" class="color-field" value="<?= esc_attr( get_option('page-bgcolor') )?>" /></td>
 						</tr>
 						<tr>
 							<td>Footer Background Color </td>
-							<td><input type="color" name="footer-bgcolor" value="<?= esc_attr( get_option('footer-bgcolor') )?>" /></td>
+							<td><input type="text" name="footer-bgcolor" class="color-field" value="<?= esc_attr( get_option('footer-bgcolor') )?>" /></td>
 						</tr>
 						<tr>
 							<td>Default Banner Images </td>
 							<td>
 								<input type="file" id="input_banner" name="input_banner" accept=".jpg, .jpeg, .png" value="">
-								<input class="f-right" type="button" id="btn_cancel" value="cancel">
+								<input type="button" class="button button-primary" id="btn_cancel" value="cancel">
 							</td>
 						</tr>
 						<tr>
@@ -175,8 +149,8 @@
 				</div>
 			
 				<!-- Copyright settings -->
-				<div id="5" class="tabcontent">
-					<h3>V. Page Settings</h3>
+				<div id="4" class="tabcontent">
+					<h3> Page Settings</h3>
 					<table class="zjl-table">
 						<tr>
 							<td class="w-25">Header Template</td>
@@ -184,10 +158,14 @@
 							<td class="w-25"><input type="radio" name="header-template" value="center"<?= ((get_option('header-template') === 'center') ? "checked='checked'" : '') ?>>Center Logo</td>
 							<td class="w-25"><input type="radio" name="header-template" value="right"<?= ((get_option('header-template') === 'right') ? "checked='checked'" : '') ?>>Right Logo</td>
 						</tr>
+						<tr>
+							<td>Scroll to Top </td>
+							<td class="w-25"><input type="checkbox" name="scroll-to-top" value="true" <?php if(get_option('scroll-to-top') == "true") echo "checked"; ?> />
+						<tr>
 					</table>
 				</div>
 					
-				<div id="6" class="tabcontent">
+				<div id="5" class="tabcontent">
 					<p><b>Get Developer Part : </b> [developer] </p>
 					<p><b>Get Copyright Part : </b> [copyright] </p>
 					<p><b>Get Year Part : </b>[year]</p>
@@ -202,9 +180,36 @@
 						</tr>
 					</table>
 				</div>
+
+				<!-- Theme Features settings -->
+				<div id="6" class="tabcontent">
+					<h3> Enable Theme Features - Add Ons</h3>
+					<table class="zjl-table">
+						<tr>
+							<td>FontAwesome v4.4.0 : </td>
+							<td><input type="checkbox" name="font_awesome" value="true" <?php if(get_option('font_awesome') == "true") echo "checked"; ?> /> <a target="_blank" href="https://fortawesome.github.io/Font-Awesome/icons/">Read Documentation</a></td>
+						</tr>
+						<tr>
+							<td>Scroll Reveal : </td>
+							<td><input type="checkbox" name="scroll_reveal" value="true" <?php if(get_option('scroll_reveal') == "true") echo "checked"; ?> /><a target="_blank" href="https://github.com/jlmakes/scrollreveal.js">Read Documentation</a> </td>
+						</tr>
+						<tr>
+							<td>Owl Carousel v2.3.3: </td>
+							<td><input type="checkbox" name="owl" value="true" <?php if(get_option('owl') == "true") echo "checked"; ?> /> <a target="_blank" href="https://owlcarousel2.github.io/OwlCarousel2/demos/basic.html">Read Documentation</a> </td>
+						</tr>
+						<tr>
+							<td>JS Parallax Scrolling : </td>
+							<td><input type="checkbox" name="parallax" value="true" <?php if(get_option('parallax') == "true") echo "checked"; ?> /> Example :  $("SELECTOR").parallax("50%", 0.1); </td>
+						</tr>
+						<tr>
+							<td>Dark Mode Widget: </td>
+							<td><input type="checkbox" name="dark_mode" value="true" <?php if(get_option('dark_mode') == "true") echo "checked"; ?> /> <a target="_blank" href="https://darkmodejs.learn.uno/">Read Documentation</a> </td>
+						</tr>
+					</table>
+				</div>
 			
 				<div id="7" class="tabcontent">
-					<h3>VII. Third Party Scripts</h3>
+					<h3> Third Party Scripts</h3>
 					<table class="zjl-table">
 						<tr>
 							<td>Third Party Scripts : </td>
@@ -219,6 +224,9 @@
 		</div>
 
 		<script type="text/javascript">
+			$(document).ready(function() {
+				$('#tab-0').addClass(" active");
+			});
 			document.getElementById(0).style.display = "block";
 			function openCity(evt, tabname) {
 			  document.getElementById(0).className += " active";
@@ -260,7 +268,7 @@
 	 */
 	function rocketThemeSettings() {
 
-		add_option( 'header-bgcolor', '#F8EAE7' );
+		add_option( 'header-bgcolor', '#1e73be' );
 		add_option( 'page-bgcolor', '#FFFFFF' );
 		add_option( 'footer-bgcolor', '#8E8A89' );
 		add_option( 'header-template', 'left' );
@@ -290,6 +298,7 @@
 		register_setting( 'option-group', 'page-bgcolor' );
 		register_setting( 'option-group', 'footer-bgcolor' );
 		register_setting( 'option-group', 'header-template' );
+		register_setting( 'option-group', 'scroll-to-top' );
 
 		register_setting( 'option-group', 'input_banner' );
 
@@ -302,16 +311,16 @@
 	?>
 		<style type='text/css'>
 			.site-header, nav.navbar {
-				background-color:<?php echo $header; ?>!important;
+				background-color:<?php echo $header; ?> !important;
 			}
 			footer, .site_main_footer, .site_copyright {
-				background-color:<?php echo $footer; ?>!important;
+				background-color:<?php echo $footer; ?> !important;
 			}
 			/* span.text-muted{
 				mix-blend-mode: difference;
 			} */
 			.site{
-				background-color:<?php echo $page; ?>!important;
+				background-color:<?php echo $page; ?> !important;
 			}
 		</style>
 	<?php

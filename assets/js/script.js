@@ -6,6 +6,18 @@ $(function(){
 	mobyMobileMenu();
 	console.log('Loading Resources............100%');
 	$('body').hide();
+
+	$(window).scroll(function() {
+		if ($(this).scrollTop()) {
+			$('#scroll-to-top').fadeIn();
+		} else {
+			$('#scroll-to-top').fadeOut();
+		}
+	});
+
+	$("#scroll-to-top").on('click', function () {
+		$("html, body").animate({scrollTop: 0}, 1000);
+	});
 });
 function mobileMenu(){
 	var screen = $(window).width();
@@ -23,13 +35,13 @@ function mobileMenu(){
 	}
 }
 function menuClick(){
-	$('li.dropdown').click(function(e){
+	$('li.dropdown').on('click', function (e) {
 		console.log(e);
 		$(this).removeClass('open');
 	});
 }
 
-	$(window).load(function() {
-		$('.loading').fadeOut();
-		$('body').fadeIn();
-	});
+$(window).on('load', function () {
+	$('.loading').fadeOut();
+	$('body').fadeIn();
+});
