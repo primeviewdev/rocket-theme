@@ -5,16 +5,10 @@
 get_header(); ?>
 
 	<div id="primary" class="homepage site-content">
-		<div class="layer layer_slider">
-			<?php echo do_shortcode('[soliloquy id="24"]'); ?>
-		</div>
 		<div class="layer layer_1">
 			<div class="container">
 				<div class="row">
 					<?php dynamic_sidebar('home-layer-1'); ?>
-					<div class="col-md-12">
-						<?php echo do_shortcode('[products limit=4 columns=4]'); ?>
-					</div>
 				</div>
 			</div>
 		</div>
