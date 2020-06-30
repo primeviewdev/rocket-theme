@@ -37,8 +37,8 @@ get_header(); ?>
 			</div>
 		</div>
 	</div> -->
-	<div class="text-center">
-		<img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/assets/images/404.gif" alt="404">
+	<div class="text-center glitch-main">
+		<a href="#" class="glitch" data-glitch="404">404</a>
 	</div>
 	<div class="container main_content text-center">
 			<div class="row" role="main">
