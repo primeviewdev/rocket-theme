@@ -219,11 +219,11 @@
 				'force_deactivation' => false
 			),
 			array(
-				'name'      => 'Zone Rating', //repo name
-				'slug'      => 'zone-rating', //url
+				'name'      => 'Zone Ratings', //repo name
+				'slug'      => 'zone-ratings', //url
 				'source'    => '/zekinah/Zone-Ratings/archive/master.zip',
 				'external_url' => 'https://github.com/zekinah/Zone-Ratings',
-				'version'	=> 'version 1.9',
+				'version'	=> '1.9.0',
 				'required'  => false,
 				'force_activation' => false,
 				'force_deactivation' => false
@@ -232,8 +232,8 @@
 				'name'      => 'Zone Cookie', //repo name
 				'slug'      => 'zone-cookie', //url
 				'source'    => '/zekinah/Zone-Cookie/archive/master.zip',
-				'external_url' => 'https://github.com/zekinah/Zone-Cookie',
-				'version'	=> 'version 1.2',
+				'external_url' => 'https://wordpress.org/plugins/zone-cookie/',
+				'version'	=> '1.0.3',
 				'required'  => false,
 				'force_activation' => false,
 				'force_deactivation' => false
@@ -242,8 +242,8 @@
 				'name'      => 'Zone Redirect', //repo name
 				'slug'      => 'zone-redirect', //url
 				'source'    => '/zekinah/Zone-Redirect/archive/master.zip',
-				'external_url' => 'https://github.com/zekinah/Zone-Redirect',
-				'version'	=> 'version 1.0',
+				'external_url' => 'https://wordpress.org/plugins/zone-redirect/',
+				'version'	=> '1.0.4',
 				'required'  => false,
 				'force_activation' => false,
 				'force_deactivation' => false

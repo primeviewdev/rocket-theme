@@ -11,7 +11,7 @@
 - Compatible up to the latest version of WP
 
 ## Contributors
-* Zekinah Joy Lecaros
+* Zekinah Lecaros
 * Reander Agulto
 * Janfred Magnaye
 * Jester Aguilar
