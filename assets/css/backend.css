@@ -26,30 +26,30 @@ button, input, select, textarea {
     float: left;
 }
 
-table.zjl-table tr td input[type=text],table.zjl-table tr td textarea {
+table.rckt-table tr td input[type=text],table.rckt-table tr td textarea {
     width: 80%;
 }
-table.zjl-table tr td {
+table.rckt-table tr td {
     border-bottom: 1px solid #eee;
     margin: 13px 0px;
     padding: 12px 0px;
     font-size: 14px;
 	font-weight: bold;
 }
-table.zjl-table tr:last-of-type  td{
+table.rckt-table tr:last-of-type  td{
     border-bottom: 0px solid #eee;
 }
-table.zjl-table {
+table.rckt-table {
     padding: 16px;
     width: 70%;
 	margin-bottom: 40px;
 }
-table.zjl-table tr td a {
+table.rckt-table tr td a {
     float: right;
 }
 
 /*image*/
-img.zjl-image-center {
+img.rckt-image-center {
     display: block;
     margin-left: auto;
     margin-right: auto;

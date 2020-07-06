@@ -31,8 +31,8 @@
 			?>
 			<!-- Home -->
 			<div id="0" class="tabcontent active">
-					<div class="zjl-home">
-						<img class="zjl-image-center" src='<?= get_template_directory_uri() ?>/assets/images/banner.png'>
+					<div class="rckt-home">
+						<img class="rckt-image-center" src='<?= get_template_directory_uri() ?>/assets/images/banner.png'>
 						<h2>Social Media Shortcode</h2>
 						<p><b>Shortcode :</b> [social-media]</p>
 						<p><b>Parameters : </b> mode = facebook , twitter , google_plus , linkedin , youtube , instagram , pinterest </p>
@@ -54,7 +54,7 @@
 					<p><b>Shortcode :</b> [social-media]</p>
 					<p><b>Parameters : </b> mode = facebook , twitter , google_plus , linkedin , youtube , instagram , pinterest </p>
 					<p><b>Example : </b> [social-media mode="facebook"]</p>
-					<table class="zjl-table">
+					<table class="rckt-table">
 						<tr>
 							<td>Facebook: </td>
 							<td><input placeholder="Facebook" type="text" name="facebook" value="<?= esc_attr( get_option('facebook') ) ?>" /> </td>
@@ -84,12 +84,21 @@
 							<td><input placeholder="Pinterest" type="text" name="pinterest" value="<?= esc_attr( get_option('pinterest') )?>" /></td>
 						</tr>
 					</table>
+					<hr>
+					<h3> Contacts </h3>
+					<p><b>Shortcode :</b> [phonenumber]</p>
+					<table class="rckt-table">
+						<tr>
+							<td>Phone Number: </td>
+							<td><input placeholder="(000)-000-xxxx" type="text" name="phonenumber" value="<?= esc_attr( get_option('phonenumber') ) ?>" /> </td>
+						</tr>
+					</table>
 				</div>
 			
 				<!-- Website settings -->
 				<div id="2" class="tabcontent">
 					<h3> Website Settings</h3>
-					<table class="zjl-table">
+					<table class="rckt-table">
 						<tr>
 							<td>Frontend Favicon: </td>
 							<td><input placeholder="Frontend Favicon" type="text" name="favicon" value="<?= esc_attr( get_option('favicon') )?>" /></td>
@@ -105,7 +114,7 @@
 				<!-- Frontend settings  -->
 				<div id="3" class="tabcontent">
 					<h3> Frontend Settings</h3>
-					<table class="zjl-table">
+					<table class="rckt-table">
 						<tr>
 							<td>Header Background Color </td>
 							<td><input type="text" name="header-bgcolor" class="color-field" value="<?= esc_attr( get_option('header-bgcolor') )?>" /></td>
@@ -151,7 +160,7 @@
 				<!-- Copyright settings -->
 				<div id="4" class="tabcontent">
 					<h3> Page Settings</h3>
-					<table class="zjl-table">
+					<table class="rckt-table">
 						<tr>
 							<td class="w-25">Header Template</td>
 							<td class="w-25"><input type="radio" name="header-template" value="left"<?= ((get_option('header-template') === 'left') ? "checked='checked'" : '') ?>>Default</td>
@@ -169,7 +178,7 @@
 					<p><b>Get Developer Part : </b> [developer] </p>
 					<p><b>Get Copyright Part : </b> [copyright] </p>
 					<p><b>Get Year Part : </b>[year]</p>
-					<table class="zjl-table">
+					<table class="rckt-table">
 						<tr>
 							<td>Copyright : </td>
 							<td><textarea rows="6" type="text" name="copyright" value="<?= esc_attr( get_option('copyright') )?>" ><?= esc_attr( get_option('copyright') )?></textarea></td>
@@ -184,7 +193,7 @@
 				<!-- Theme Features settings -->
 				<div id="6" class="tabcontent">
 					<h3> Enable Theme Features - Add Ons</h3>
-					<table class="zjl-table">
+					<table class="rckt-table">
 						<tr>
 							<td>FontAwesome v4.4.0 : </td>
 							<td><input type="checkbox" name="font_awesome" value="true" <?php if(get_option('font_awesome') == "true") echo "checked"; ?> /> <a target="_blank" href="https://fortawesome.github.io/Font-Awesome/icons/">Read Documentation</a></td>
@@ -210,7 +219,7 @@
 			
 				<div id="7" class="tabcontent">
 					<h3> Third Party Scripts</h3>
-					<table class="zjl-table">
+					<table class="rckt-table">
 						<tr>
 							<td>Third Party Scripts : </td>
 							<td><textarea rows="10" type="text" name="rocket_scripts" value="<?= esc_attr( get_option('rocket_scripts') )?>" ><?= esc_attr( get_option('rocket_scripts') )?></textarea></td>
@@ -282,6 +291,7 @@
 		register_setting( 'option-group', 'youtube' );
 		register_setting( 'option-group', 'instagram' );
 		register_setting( 'option-group', 'pinterest' );
+		register_setting( 'option-group', 'phonenumber' );
 		register_setting( 'option-group', 'favicon' );
 		register_setting( 'option-group', 'admin_favicon' );
 		register_setting( 'option-group', 'font_awesome' );

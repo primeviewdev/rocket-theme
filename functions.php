@@ -14,6 +14,10 @@
 		return do_shortcode(get_option('copyright'));
 	}
 
+	function phoneShortcode( $atts ) { 
+		return do_shortcode(get_option('phonenumber'));
+	}
+
 	/**
 	 * Social Media Shortcode
 	 */
@@ -392,6 +396,7 @@
 		add_shortcode( 'social-media', 'socialMediaShortcode' ); //[social-media mode="facebook"]
 		add_shortcode( 'copyright', 'copyrightShortcode' ); //[copyright]
 		add_shortcode( 'developer', 'developerShortcode' ); //[developer]
+		add_shortcode( 'phonenumber', 'phoneShortcode' ); //[phonenumber]
 		add_shortcode('recent-posts', 'pull_blog_posts'); //[recent-posts post=5 template=news ]
 	}	
 	
