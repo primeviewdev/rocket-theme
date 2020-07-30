@@ -319,16 +319,13 @@
 		$footer = get_option('footer-bgcolor');
 		$page   = get_option('page-bgcolor');
 	?>
-		<style type='text/css'>
+		<style type="text/css">
 			.site-header, nav.navbar {
 				background-color:<?php echo $header; ?> !important;
 			}
 			footer, .site_main_footer, .site_copyright {
 				background-color:<?php echo $footer; ?> !important;
 			}
-			/* span.text-muted{
-				mix-blend-mode: difference;
-			} */
 			.site{
 				background-color:<?php echo $page; ?> !important;
 			}
@@ -342,6 +339,7 @@
 		$optionJS = get_option('header-template');
 	?>
 		<script>
+			$ = jQuery.noConflict();
 			function mobyMobileMenu(){
 			var 	template  = '<div id="main-mobile-menu" class="moby-inner">';
 					template +=     '<div class="moby-close">x</div>';
