@@ -208,7 +208,7 @@
 						</tr>
 						<tr>
 							<td>JS Parallax Scrolling : </td>
-							<td><input type="checkbox" name="parallax" value="true" <?php if(get_option('parallax') == "true") echo "checked"; ?> /> Example :  $("SELECTOR").parallax("50%", 0.1); </td>
+							<td><input type="checkbox" name="parallax" value="true" <?php if(get_option('parallax') == "true") echo "checked"; ?> /> <a target="_blank" href="https://pixelcog.github.io/parallax.js/">Read Documentation</a> </td>
 						</tr>
 						<tr>
 							<td>Dark Mode Widget: </td>
