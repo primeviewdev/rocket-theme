@@ -24,7 +24,7 @@
 			$x = 0;
 			echo '<div class="tab">';
 			foreach ($tab_option as $option_setting) {
-				echo '<button id="tab-'.$x.'" class="tablinks" onclick="openCity(event, '.$x.')">'.$option_setting.'</button>';
+				echo '<button id="tab-'.$x.'" class="tablinks" onclick="openTabRocket(event, '.$x.')">'.$option_setting.'</button>';
 				$x++;
 			}
 			echo '</div>';
@@ -233,24 +233,22 @@
 		</div>
 
 		<script type="text/javascript">
-			$(document).ready(function() {
-				$('#tab-0').addClass(" active");
-			});
-			document.getElementById(0).style.display = "block";
-			function openCity(evt, tabname) {
-			  document.getElementById(0).className += " active";
-			  var i, tabcontent, tablinks;
-			  tabcontent = document.getElementsByClassName("tabcontent");
-			  for (i = 0; i < tabcontent.length; i++) {
-				tabcontent[i].style.display = "none";
-			  }
-			  tablinks = document.getElementsByClassName("tablinks");
-			  for (i = 0; i < tablinks.length; i++) {
-				tablinks[i].className = tablinks[i].className.replace(" active", "");
-			  }
-			  document.getElementById(tabname).style.display = "block";
-			  evt.currentTarget.className += " active";
+			
+			function openTabRocket(evt, cityName) {
+				var i, tabcontent, tablinks;
+				tabcontent = document.getElementsByClassName("tabcontent");
+				for (i = 0; i < tabcontent.length; i++) {
+					tabcontent[i].style.display = "none";
+				}
+				tablinks = document.getElementsByClassName("tablinks");
+				for (i = 0; i < tablinks.length; i++) {
+					tablinks[i].className = tablinks[i].className.replace(" active", "");
+				}
+				document.getElementById(cityName).style.display = "block";
+				evt.currentTarget.className += " active";
 			}
+			// Get the element with id="defaultOpen" and click on it
+			document.getElementById("tab-0").click();
 			function readURL(input) {
 				if (input.files && input.files[0]) {
 					var reader = new FileReader();
