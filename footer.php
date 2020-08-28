@@ -19,7 +19,9 @@
 					</div>
 				</div>
 			</footer>
+			<?php if(get_option('scroll-to-top')):?>
 			<div id="scroll-to-top" title="Scroll to top"><i class="fas fa-arrow-up"></i></div>
+			<?php endif; ?>
 		</div>
 		<?php wp_footer(); ?>
 		<?php
