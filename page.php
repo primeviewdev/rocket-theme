@@ -4,7 +4,7 @@
  *
  */
  
-$thumb = '/wp-content/uploads/2018/06/heavy-one-default-banner-page.jpg';
+$thumb = '';
 if(file_exists($thumb)){
 	$image = get_field('banner_image');
 	if ( $image ) : $thumb = $image; endif;	
