@@ -1,9 +1,9 @@
 
-(function( $ ) {
+(function($) {
+	'use strict';
   $ = jQuery.noConflict();
-    $(function() {
-        // Init Color Picker
-        $('.color-field').wpColorPicker();
-      });
-     
+  $(window).on('load', function () {
+    // Init Color Picker
+    $('.color-field').wpColorPicker();
+  });
 })( jQuery );

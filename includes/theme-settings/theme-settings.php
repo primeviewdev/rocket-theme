@@ -127,33 +127,6 @@
 							<td>Footer Background Color </td>
 							<td><input type="text" name="footer-bgcolor" class="color-field" value="<?= esc_attr( get_option('footer-bgcolor') )?>" /></td>
 						</tr>
-						<tr>
-							<td>Default Banner Images </td>
-							<td>
-								<input type="file" id="input_banner" name="input_banner" accept=".jpg, .jpeg, .png" value="">
-								<input type="button" class="button button-primary" id="btn_cancel" value="cancel">
-							</td>
-						</tr>
-						<tr>
-							<td colspan="2"><input class="w-100" type="text" id="banner_name" value="<?= esc_attr( get_option('input_banner') )?>" disabled></td>
-						</tr>
-						<tr>
-							<td colspan="2">
-								<div class="container-output">
-								<?php
-									$preview = 'http://via.placeholder.com/1920x580';
-									if(get_option('input_banner') != $preview){
-										if (get_option('input_banner') == null){
-											$preview = 'http://via.placeholder.com/1920x580';
-										} else {
-											$preview = get_option('input_banner');
-										}
-									}
-								?>
-									<img class="w-100" id="output_banner" src="<?= $preview ?>" alt="Banner Preview" />
-								</div>
-							</td>
-						</tr>
 					</table>
 				</div>
 			
@@ -259,13 +232,6 @@
 					reader.readAsDataURL(input.files[0]);
 				}
 			}
-			$("#input_banner").change(function() {
-				readURL(this);
-			});
-			$("#btn_cancel").click(function() {
-				$("#output_banner").attr("src", "http://via.placeholder.com/1920x580").addClass('w-100');
-				$("#input_banner").val('');
-			});
 		</script>	
 <?php
 	}
@@ -279,8 +245,6 @@
 		add_option( 'page-bgcolor', '#FFFFFF' );
 		add_option( 'footer-bgcolor', '#8E8A89' );
 		add_option( 'header-template', 'left' );
-
-		add_option('input_banner','None');
 
 		register_setting( 'option-group', 'facebook' );
 		register_setting( 'option-group', 'twitter' );
@@ -307,8 +271,6 @@
 		register_setting( 'option-group', 'footer-bgcolor' );
 		register_setting( 'option-group', 'header-template' );
 		register_setting( 'option-group', 'scroll-to-top' );
-
-		register_setting( 'option-group', 'input_banner' );
 
 	}
 
