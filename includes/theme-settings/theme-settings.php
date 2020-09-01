@@ -199,7 +199,7 @@
 						</tr>
 					</table>
 				</div>
-				<div class="copyright"><p>© copyright 2019<a href="https://primeview.com" target="_blank">  Primeview</a></p></div>
+				<div class="copyright"><p>© copyright 2020<a href="https://primeview.com" target="_blank">  Primeview</a></p></div>
 				<?= submit_button(); ?>
 			</form>
 
