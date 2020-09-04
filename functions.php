@@ -347,7 +347,7 @@
 		/**
 		 * Async JS Version
 		 */
-		add_filter( 'clean_url', 'asyncJS', 11, 1 );
+		// add_filter( 'clean_url', 'asyncJS', 11, 1 );
 	
 		/** 
 		 * Load on admin
