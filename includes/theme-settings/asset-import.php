@@ -23,7 +23,6 @@ function rocketStyle(){
 }
 
 function importAdminAssets(){
-	wp_enqueue_style('backend-css-styles', get_template_directory_uri().'/assets/css/backend.css');
 	/**
 	 * Theme Options
 	 */

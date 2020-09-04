@@ -303,6 +303,16 @@
 	}
 
 	/**
+	 * Register and enqueue a custom stylesheet in the WordPress admin.
+	 */
+	function rocketAdminStyle() {
+		wp_register_style( 'backend-css-styles', get_template_directory_uri() . '/assets/css/backend.css', false, '1.0.0' );
+		wp_enqueue_style( 'backend-css-styles' );
+		wp_register_style( 'backend-js-script',  get_template_directory_uri().'/assets/js/backend.js',array('jquery'), false, '1.0.0');
+		wp_enqueue_script( 'backend-js-script');
+	}
+
+	/**
 	 * Function Init 
 	 */
 	function launchRocket(){
@@ -337,14 +347,16 @@
 		/**
 		 * Async JS Version
 		 */
-		//add_filter( 'clean_url', 'asyncJS', 11, 1 );
+		add_filter( 'clean_url', 'asyncJS', 11, 1 );
 	
 		/** 
 		 * Load on admin
 		 */
 		if(is_admin()){
-			wp_enqueue_style('backend-css-styles', get_template_directory_uri().'/assets/css/backend.css');
-			wp_enqueue_script( 'backend-js-script',  get_template_directory_uri().'/assets/js/backend.js',array('jquery'));
+			/**
+			 * Theme Styles
+			 */
+			add_action( 'admin_enqueue_scripts', 'rocketAdminStyle' );
 			/**
 			 * Theme Options
 			 */
@@ -362,9 +374,8 @@
 			 add_theme_support( 'post-thumbnails' ); 
 			 add_action( 'admin_enqueue_scripts', 'enqueue_color_picker' );
 			 
-			  
-
 		}
+
 		/**
 		 * Plugin Dep
 		 */
