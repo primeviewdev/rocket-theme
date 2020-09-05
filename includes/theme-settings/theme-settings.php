@@ -298,7 +298,7 @@
 	function dynamicJS() {
 		$optionJS = get_option('header-template');
 	?>
-		<script>
+		<script async>
 			$ = jQuery.noConflict();
 			function mobyMobileMenu(){
 			var 	template  = '<div id="main-mobile-menu" class="moby-inner">';
