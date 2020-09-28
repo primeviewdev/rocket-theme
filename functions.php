@@ -320,12 +320,12 @@
 		 * Load on frontend
 		 */
 
+		add_action( 'wp_enqueue_scripts', 'rocketStyle' );
 		add_action( 'wp_enqueue_scripts', 'rocketScript' );
 		
 		/**
 		 * Inline CSS 
 		 */
-		add_action( 'wp_head', 'rocketStyle',100);
 		add_action( 'wp_head', 'dynamicCSS',100);
 		
 		/**

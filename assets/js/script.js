@@ -5,7 +5,6 @@ $j(function(){
 	menuClick();
 	mobyMobileMenu();
 	console.log('Loading Resources............100%');
-	$j('body').hide();
 
 	$j(window).scroll(function() {
 		if ($j(this).scrollTop()) {
@@ -43,5 +42,4 @@ function menuClick(){
 
 $j(window).on('load', function () {
 	$j('.loading').fadeOut();
-	$j('body').fadeIn();
 });

@@ -59,32 +59,22 @@ function rocketScript(){
 	}
 	//Dark Mode
 	if(get_option('dark_mode')) {
-		wp_enqueue_script( 'rocket-dark-mode', get_template_directory_uri() . '/assets/js/darkmode/darkmode-js.min.js',array('jquery'));
-		wp_enqueue_script( 'rocket-dark-mode-custom', get_template_directory_uri() . '/assets/js/dark-mode-custom.js',array('jquery'));
+		wp_enqueue_script( 'rocket-dark-mode', get_template_directory_uri() . '/assets/js/darkmode/darkmode-js.min.js',array());
+		wp_enqueue_script( 'rocket-dark-mode-custom', get_template_directory_uri() . '/assets/js/dark-mode-custom.js',array());
 	}
 
+	$css = '';
 	if(get_option('scroll-to-top')) {
-?>
-	<style type='text/css'>
-		#scroll-to-top {
-			display: block;
-		}
-	</style>
-<?php
+		$css .= "<style type='text/css'>#scroll-to-top {display: block;}</style>";
 	} else {
-?>
-	<style type='text/css'>
-		#scroll-to-top {
-			display: none;
-		}
-	</style>
-<?php
-
+		$css .= "<style type='text/css'>#scroll-to-top {display: none;}</style>";
 	}
+	echo $css;
+	
 	//Rocket JS
 	wp_enqueue_script( 'rocket-bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap/bootstrap.min.js', array('jquery'));	
 	wp_enqueue_script( 'rocket-script', get_template_directory_uri() . '/assets/js/script.js',array('jquery'));
-	wp_enqueue_script( 'moby-js', get_template_directory_uri() . '/assets/js/moby/moby.min.js',array('jquery'));
+	wp_enqueue_script( 'moby-js', get_template_directory_uri() . '/assets/js/moby/moby.min.js',array());
 	//Wordpress AJAX
 	wp_localize_script( 'wp_ajax', 'wp_ajax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' )));
 	wp_enqueue_script( 'wp_ajax' );
