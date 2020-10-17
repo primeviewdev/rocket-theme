@@ -144,6 +144,10 @@
 							<td>Scroll to Top </td>
 							<td class="w-25"><input type="checkbox" name="scroll-to-top" value="true" <?php if(get_option('scroll-to-top') == "true") echo "checked"; ?> />
 						<tr>
+						<tr>
+							<td>Preloader </td>
+							<td class="w-25"><input type="checkbox" name="preloader" value="true" <?php if(get_option('preloader') == "true") echo "checked"; ?> />
+						<tr>
 					</table>
 				</div>
 					
@@ -271,6 +275,7 @@
 		register_setting( 'option-group', 'footer-bgcolor' );
 		register_setting( 'option-group', 'header-template' );
 		register_setting( 'option-group', 'scroll-to-top' );
+		register_setting( 'option-group', 'preloader' );
 
 	}
 
