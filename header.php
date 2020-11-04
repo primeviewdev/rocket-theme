@@ -22,6 +22,7 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); $headerTemplate = get_option('header-template');?> >
+<?php if(get_option('preloader')): ?>
 	<div class="loading">
 		<div class="spinner">
 			<div class="bounce1"></div>
@@ -29,7 +30,7 @@
 			<div class="bounce3"></div>
 		</div>
 	</div>
-
+<?php endif; ?>
 	<div id="page" class="hfeed ">
 		<div class="site-header">
 			<?php
